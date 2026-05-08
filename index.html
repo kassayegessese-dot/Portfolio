@@ -1,0 +1,577 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <title>Kassaye Gessese | Portfolio</title>
+
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+
+    <!-- Lucide Icons -->
+    <script src="https://unpkg.com/lucide@latest"></script>
+
+    <style>
+
+        *{
+            margin:0;
+            padding:0;
+            box-sizing:border-box;
+        }
+
+        html{
+            scroll-behavior:smooth;
+        }
+
+        body{
+            font-family:Arial, sans-serif;
+            background:linear-gradient(135deg,#0f172a,#1e293b,#0f172a);
+            color:white;
+            overflow-x:hidden;
+        }
+
+        section{
+            padding:100px 20px;
+        }
+
+        /* NAVBAR */
+
+        nav{
+            position:sticky;
+            top:0;
+            z-index:1000;
+            backdrop-filter:blur(10px);
+            background:rgba(15,23,42,0.8);
+            border-bottom:1px solid rgba(255,255,255,0.1);
+        }
+
+        .nav-link{
+            position:relative;
+            color:#e2e8f0;
+            text-decoration:none;
+            transition:all 0.3s ease;
+        }
+
+        .nav-link:hover{
+            color:#10b981;
+        }
+
+        .nav-link::after{
+            content:'';
+            position:absolute;
+            width:0;
+            height:2px;
+            left:0;
+            bottom:-5px;
+            background:#10b981;
+            transition:0.3s;
+        }
+
+        .nav-link:hover::after{
+            width:100%;
+        }
+
+        /* HERO */
+
+        .hero-circle{
+            position:absolute;
+            width:350px;
+            height:350px;
+            border-radius:50%;
+            background:linear-gradient(135deg,#10b981,#06b6d4);
+            opacity:0.1;
+            animation:float 6s infinite ease-in-out;
+        }
+
+        @keyframes float{
+            0%,100%{
+                transform:translateY(0px);
+            }
+
+            50%{
+                transform:translateY(-25px);
+            }
+        }
+
+        .profile-img{
+            box-shadow:0 0 40px rgba(16,185,129,0.4);
+            transition:0.4s;
+        }
+
+        .profile-img:hover{
+            transform:scale(1.05);
+        }
+
+        /* BUTTONS */
+
+        .btn-primary{
+            background:linear-gradient(135deg,#10b981,#06b6d4);
+            transition:0.3s;
+        }
+
+        .btn-primary:hover{
+            transform:translateY(-3px) scale(1.05);
+            box-shadow:0 10px 30px rgba(16,185,129,0.4);
+        }
+
+        /* CARDS */
+
+        .card{
+            transition:0.4s;
+        }
+
+        .card:hover{
+            transform:translateY(-10px);
+            box-shadow:0 20px 40px rgba(16,185,129,0.2);
+        }
+
+        /* SKILLS */
+
+        .skill{
+            padding:8px 16px;
+            border-radius:999px;
+            background:rgba(16,185,129,0.1);
+            border:1px solid rgba(16,185,129,0.3);
+            font-size:14px;
+        }
+
+    </style>
+</head>
+
+<body>
+
+<!-- NAVBAR -->
+
+<nav class="py-5 px-6">
+
+    <div class="max-w-6xl mx-auto flex justify-between items-center flex-wrap gap-4">
+
+        <h1 class="text-2xl font-bold text-emerald-400">
+            KGK
+        </h1>
+
+        <div class="flex flex-wrap justify-center gap-4 text-sm md:text-base">
+
+            <a href="#about" class="nav-link">About</a>
+
+            <a href="#skills" class="nav-link">Skills</a>
+
+            <a href="#certifications" class="nav-link">Certifications</a>
+
+            <a href="#contact" class="nav-link">Contact</a>
+
+        </div>
+
+    </div>
+
+</nav>
+
+<!-- HERO -->
+
+<section class="min-h-screen flex items-center justify-center relative overflow-hidden">
+
+    <div class="hero-circle top-10 left-[-100px]"></div>
+
+    <div class="hero-circle bottom-10 right-[-100px]"></div>
+
+    <div class="text-center relative z-10 px-6">
+
+        <!-- IMPORTANT:
+             Put profile.jpg in same folder as index.html
+        -->
+
+        <img
+            src="profile.jpg"
+            alt="Kassaye Gessese"
+            class="profile-img w-40 h-40 md:w-56 md:h-56 rounded-full mx-auto object-cover border-4 border-emerald-400 mb-8"
+        >
+
+        <h1 class="text-4xl sm:text-5xl md:text-7xl font-black mb-6">
+            Kassaye Gessese
+        </h1>
+
+        <p class="text-lg md:text-2xl text-cyan-300 font-light max-w-3xl mx-auto mb-10">
+            Full Stack Developer • Digital Creative • Machine Learning Enthusiast
+        </p>
+
+        <a href="#about"
+           class="btn-primary inline-block px-10 py-4 rounded-full text-white font-semibold">
+            Explore My Work
+        </a>
+
+        <p class="text-emerald-400 text-lg mt-8">
+            📞 +251-934-081-711
+        </p>
+
+    </div>
+
+</section>
+
+<!-- ABOUT -->
+
+<section id="about">
+
+    <div class="max-w-6xl mx-auto">
+
+        <h2 class="text-4xl font-bold text-center mb-16">
+            About Me
+        </h2>
+
+        <div class="grid md:grid-cols-2 gap-12 items-center">
+
+            <div>
+
+                <h3 class="text-2xl font-bold text-emerald-400 mb-6">
+                    Who I Am
+                </h3>
+
+                <p class="text-gray-300 leading-8 mb-6 text-lg">
+
+                    I'm Kassaye Gessese, a passionate Full Stack Developer,
+                    Digital Creative, and Machine Learning enthusiast.
+
+                    I specialize in building modern websites,
+                    AI solutions, and creative digital experiences.
+
+                </p>
+
+                <p class="text-gray-300 leading-8 text-lg">
+
+                    I combine programming, design,
+                    and innovation to create visually attractive projects.
+
+                </p>
+
+            </div>
+
+            <div class="space-y-6">
+
+                <div class="card bg-slate-800/60 p-6 rounded-2xl border border-emerald-400/20">
+
+                    <div class="flex items-center gap-4 mb-4">
+
+                        <i data-lucide="code-2" class="text-emerald-400"></i>
+
+                        <h4 class="text-xl font-bold">
+                            Development
+                        </h4>
+
+                    </div>
+
+                    <p class="text-gray-300">
+                        Modern frontend and backend development using powerful technologies.
+                    </p>
+
+                </div>
+
+                <div class="card bg-slate-800/60 p-6 rounded-2xl border border-cyan-400/20">
+
+                    <div class="flex items-center gap-4 mb-4">
+
+                        <i data-lucide="palette" class="text-cyan-400"></i>
+
+                        <h4 class="text-xl font-bold">
+                            Creative Design
+                        </h4>
+
+                    </div>
+
+                    <p class="text-gray-300">
+                        Graphic design, branding, UI/UX and video editing.
+                    </p>
+
+                </div>
+
+                <div class="card bg-slate-800/60 p-6 rounded-2xl border border-emerald-400/20">
+
+                    <div class="flex items-center gap-4 mb-4">
+
+                        <i data-lucide="brain" class="text-emerald-400"></i>
+
+                        <h4 class="text-xl font-bold">
+                            AI & Machine Learning
+                        </h4>
+
+                    </div>
+
+                    <p class="text-gray-300">
+                        Machine learning, deep learning and NLP solutions.
+                    </p>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+<!-- SKILLS -->
+
+<section id="skills" class="bg-slate-900/40">
+
+    <div class="max-w-6xl mx-auto">
+
+        <h2 class="text-4xl font-bold text-center mb-16">
+            Skills
+        </h2>
+
+        <div class="grid md:grid-cols-3 gap-10">
+
+            <!-- DEVELOPMENT -->
+
+            <div class="card bg-slate-800/60 p-8 rounded-2xl border border-emerald-400/20">
+
+                <div class="flex items-center gap-3 mb-6">
+
+                    <i data-lucide="monitor-code" class="text-emerald-400"></i>
+
+                    <h3 class="text-2xl font-bold">
+                        Development
+                    </h3>
+
+                </div>
+
+                <div class="flex flex-wrap gap-3">
+
+                    <span class="skill">HTML</span>
+                    <span class="skill">CSS</span>
+                    <span class="skill">JavaScript</span>
+                    <span class="skill">PHP</span>
+                    <span class="skill">React</span>
+                    <span class="skill">WordPress</span>
+
+                </div>
+
+            </div>
+
+            <!-- DESIGN -->
+
+            <div class="card bg-slate-800/60 p-8 rounded-2xl border border-cyan-400/20">
+
+                <div class="flex items-center gap-3 mb-6">
+
+                    <i data-lucide="paintbrush" class="text-cyan-400"></i>
+
+                    <h3 class="text-2xl font-bold">
+                        Design
+                    </h3>
+
+                </div>
+
+                <div class="flex flex-wrap gap-3">
+
+                    <span class="skill">Photoshop</span>
+                    <span class="skill">Canva</span>
+                    <span class="skill">Logo Design</span>
+                    <span class="skill">Poster Design</span>
+                    <span class="skill">Video Editing</span>
+
+                </div>
+
+            </div>
+
+            <!-- AI -->
+
+            <div class="card bg-slate-800/60 p-8 rounded-2xl border border-emerald-400/20">
+
+                <div class="flex items-center gap-3 mb-6">
+
+                    <i data-lucide="cpu" class="text-emerald-400"></i>
+
+                    <h3 class="text-2xl font-bold">
+                        AI & Marketing
+                    </h3>
+
+                </div>
+
+                <div class="flex flex-wrap gap-3">
+
+                    <span class="skill">Machine Learning</span>
+                    <span class="skill">Deep Learning</span>
+                    <span class="skill">NLP</span>
+                    <span class="skill">Digital Marketing</span>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+<!-- CERTIFICATIONS -->
+
+<section id="certifications">
+
+    <div class="max-w-5xl mx-auto">
+
+        <h2 class="text-4xl font-bold text-center mb-16">
+            Certifications
+        </h2>
+
+        <div class="space-y-6">
+
+            <div class="card bg-slate-800/60 p-8 rounded-2xl border border-emerald-400/20">
+
+                <h3 class="text-2xl font-bold mb-3 text-emerald-400">
+                    5 Million EthioCoder
+                </h3>
+
+                <p class="text-gray-300">
+                    Comprehensive computer science training certification.
+                </p>
+
+            </div>
+
+            <div class="card bg-slate-800/60 p-8 rounded-2xl border border-cyan-400/20">
+
+                <h3 class="text-2xl font-bold mb-3 text-cyan-400">
+                    HubSpot Academy
+                </h3>
+
+                <p class="text-gray-300">
+                    Social Media Marketing certifications.
+                </p>
+
+            </div>
+
+            <div class="card bg-slate-800/60 p-8 rounded-2xl border border-emerald-400/20">
+
+                <h3 class="text-2xl font-bold mb-3 text-emerald-400">
+                    Simplilearn SkillUp
+                </h3>
+
+                <p class="text-gray-300">
+                    Machine Learning and NLP certifications.
+                </p>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+<!-- CONTACT -->
+
+<section id="contact" class="bg-slate-900/40">
+
+    <div class="max-w-4xl mx-auto text-center">
+
+        <h2 class="text-4xl font-bold mb-8">
+            Let's Work Together
+        </h2>
+
+        <p class="text-gray-300 text-lg max-w-2xl mx-auto mb-12">
+
+            I’m ready to help you create modern websites,
+            AI projects and creative digital solutions.
+
+        </p>
+
+        <div class="flex flex-wrap justify-center gap-6">
+
+            <!-- EMAIL -->
+
+            <a href="mailto:kassayegessese@gmail.com"
+               class="btn-primary px-8 py-4 rounded-full flex items-center gap-2">
+
+                <i data-lucide="mail"></i>
+
+                Email Me
+
+            </a>
+
+            <!-- GITHUB -->
+
+            <a href="https://github.com/kassayegessese-dot"
+               target="_blank"
+               class="px-8 py-4 rounded-full border border-emerald-400 text-emerald-400 hover:bg-emerald-400/10 flex items-center gap-2">
+
+                <i data-lucide="github"></i>
+
+                GitHub
+
+            </a>
+
+            <!-- LINKEDIN -->
+
+            <a href="https://linkedin.com"
+               target="_blank"
+               class="px-8 py-4 rounded-full border border-cyan-400 text-cyan-400 hover:bg-cyan-400/10 flex items-center gap-2">
+
+                <i data-lucide="linkedin"></i>
+
+                LinkedIn
+
+            </a>
+
+        </div>
+
+    </div>
+
+</section>
+
+<!-- FOOTER -->
+
+<footer class="border-t border-slate-700 py-8 text-center text-gray-400">
+
+    <p>
+        © 2026 Kassaye Gessese. All Rights Reserved.
+    </p>
+
+    <p class="mt-2 text-sm">
+        Designed & Developed by Kassaye Gessese
+    </p>
+
+</footer>
+
+<!-- JAVASCRIPT -->
+
+<script>
+
+    // Load Lucide Icons
+    lucide.createIcons();
+
+    // Active Navbar Highlight
+
+    window.addEventListener("scroll", () => {
+
+        const sections = document.querySelectorAll("section");
+        const navLinks = document.querySelectorAll(".nav-link");
+
+        let current = "";
+
+        sections.forEach(section => {
+
+            const sectionTop = section.offsetTop;
+
+            if(pageYOffset >= sectionTop - 200){
+                current = section.getAttribute("id");
+            }
+
+        });
+
+        navLinks.forEach(link => {
+
+            link.classList.remove("text-emerald-400");
+
+            if(link.getAttribute("href").includes(current)){
+                link.classList.add("text-emerald-400");
+            }
+
+        });
+
+    });
+
+</script>
+
+</body>
+</html>
